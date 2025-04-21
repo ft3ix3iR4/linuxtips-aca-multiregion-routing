@@ -29,11 +29,11 @@ jobs:
               working-directory: ./pre-deployment
               
             - name: Terraform Init
-              run: terraform init -backend-config=environment/backend.tfvars
+              run: terraform init -backend-config=./environment/backend.tfvars
               working-directory: ./pre-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
-                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
+                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Validate
@@ -69,7 +69,7 @@ jobs:
               working-directory: ./post-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
-                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY  }}
+                AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Validate
