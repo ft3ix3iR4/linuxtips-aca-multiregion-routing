@@ -240,7 +240,7 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=us-east-1/backend.tfvars
+              run: terraform init -backend-config=./us-east-1/backend.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -248,7 +248,7 @@ jobs:
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Plan
-              run: terraform plan -var-file=us-east-1/terraform.tfvars
+              run: terraform plan -var-file=./us-east-1/terraform.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -273,7 +273,7 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=us-east-1/backend.tfvars
+              run: terraform init -backend-config=./us-east-1/backend.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -281,7 +281,7 @@ jobs:
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Apply
-              run: terraform apply --auto-approve -var-file=us-east-1/terraform.tfvars
+              run: terraform apply --auto-approve -var-file=./us-east-1/terraform.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -307,7 +307,7 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=sa-east-1/backend.tfvars
+              run: terraform init -backend-config=./sa-east-1/backend.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -315,7 +315,7 @@ jobs:
                 AWS_REGION: "sa-east-1"
 
             - name: Terraform Plan
-              run: terraform plan -var-file=sa-east-1/terraform.tfvars
+              run: terraform plan -var-file=./sa-east-1/terraform.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -340,7 +340,7 @@ jobs:
               working-directory: ./deployment/environment
               
             - name: Terraform Init
-              run: terraform init -backend-config=sa-east-1/backend.tfvars
+              run: terraform init -backend-config=./sa-east-1/backend.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -348,7 +348,7 @@ jobs:
                 AWS_REGION: "sa-east-1"
 
             - name: Terraform Apply
-              run: terraform apply --auto-approve -var-file=sa-east-1/terraform.tfvars
+              run: terraform apply --auto-approve -var-file=./sa-east-1/terraform.tfvars
               working-directory: ./deployment/environment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -373,7 +373,7 @@ jobs:
               working-directory: ./post-deployment
               
             - name: Terraform Init
-              run: terraform init -backend-config=environment/backend.tfvars
+              run: terraform init -backend-config=./environment/backend.tfvars
               working-directory: ./post-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -381,7 +381,7 @@ jobs:
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Plan
-              run: terraform plan -var-file=environment/terraform.tfvars
+              run: terraform plan -var-file=./environment/terraform.tfvars
               working-directory: ./post-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -406,7 +406,7 @@ jobs:
               working-directory: ./post-deployment
               
             - name: Terraform Init
-              run: terraform init -backend-config=environment/backend.tfvars
+              run: terraform init -backend-config=./environment/backend.tfvars
               working-directory: ./post-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
@@ -414,7 +414,7 @@ jobs:
                 AWS_REGION: "us-east-1"
 
             - name: Terraform Apply
-              run: terraform apply --auto-approve -var-file=environment/terraform.tfvars
+              run: terraform apply --auto-approve -var-file=./environment/terraform.tfvars
               working-directory: ./post-deployment
               env:
                 AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID  }}
