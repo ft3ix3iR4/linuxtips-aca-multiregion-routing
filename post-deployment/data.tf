@@ -4,5 +4,5 @@ data "aws_ssm_parameter" "primary" {
 
 data "aws_ssm_parameter" "secondary" {
   provider = aws.secondary
-  name     = var.nlb_arn_secondary_ssm
+  name = var.nlb_arn_secondary_ssm
 }
